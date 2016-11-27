@@ -1,0 +1,33 @@
+<div class="window">
+    <!-- .toolbar-header sits at the top of your app -->
+    <header class="toolbar toolbar-header">
+        <h1 class="title">Password Manager</h1>
+    </header>
+    <!-- Your app's content goes inside .window-content -->
+    <div class="window-content">
+        <div class="pane-group">
+            <div class="pane pane-sm sidebar">
+                <ul class="list-group">
+                    <li class="list-group-header">
+                        <input class="form-control" type="text" [(ngModel)]="searchTerm" placeholder="Search ..." (change)="onSearch()">
+                    </li>
+                    <li class="list-group-item" [class.selected]="entry === entryToEdit" *ngFor="let entry of entries" (click)="onSelect(entry)">
+                        <div class="media-body">
+                            <strong>{{entry.name}}</strong>
+                            <p>{{entry.username}} / {{entry.password}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="pane padded">
+                <button class="btn btn-default" (click)="onNew()">
+                    <span class="icon icon-plus-circled icon-text"></span>
+                    New Entry
+                </button>
+                <hr>
+                <site-entry-form [entry]="entryToEdit" (onSaved)="onSaved($event)"></site-entry-form>
+                <p [hidden]="!message">{{message}}</p>
+            </div>
+        </div>
+    </div>
+</div>

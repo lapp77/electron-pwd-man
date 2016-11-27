@@ -1,0 +1,21 @@
+<form #siteEntryForm="ngForm">
+    <div class="form-group">
+        <label>Web Site</label>
+        <input [(ngModel)]="entry.name" name="name" class="form-control" placeholder="" required>
+    </div>
+    <div class="form-group">
+        <label>URL</label>
+        <input [(ngModel)]="entry.url" name="url" class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+        <label>Username</label>
+        <input [(ngModel)]="entry.username" name="username" class="form-control" placeholder="" required>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input [(ngModel)]="entry.password" name="password" class="form-control" placeholder="" required>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-form btn-primary" (click)="save()" [disabled]="!siteEntryForm.form.valid">Save</button>
+    </div>
+</form>
