@@ -1,16 +1,27 @@
 /* Master Styles */
-h1 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
-}
-
-h2, h3 {
-    color: #444;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-}
-
 body {
     margin: 2em;
+}
+
+/**
+    Photon styles overrides
+ */
+.list-group-item:hover {
+    background-color: #ee9d02;
+}
+
+.list-group-item:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.list-group-item > div.media-body, .list-group-item > div.media-body * {
+    cursor: hand !important;
+}
+
+.btn:focus {
+    border: 2px solid #6db3fd;
+}
+
+.btn-primary:focus {
+    border-color: #ee9d02;
 }

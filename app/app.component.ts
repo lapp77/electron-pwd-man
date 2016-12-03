@@ -18,6 +18,11 @@ export class AppComponent {
         this.entryToEdit = new SiteEntry();
     }
 
+    onClear(): void {
+        this.searchTerm = ''
+        this.entries = []
+    }
+
     onSearch(): void {
         this.siteEntryService.search(this.searchTerm).then((entries) => { this.entries = entries; });
     }

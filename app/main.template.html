@@ -10,6 +10,12 @@
                 <ul class="list-group">
                     <li class="list-group-header">
                         <input class="form-control" type="text" [(ngModel)]="searchTerm" placeholder="Search ..." (change)="onSearch()">
+                        <p class="padded-top">
+                            <button class="btn btn-default" (click)="onClear()">
+                                <span class="icon icon-erase icon-text"></span>
+                                Clear
+                            </button>
+                        </p>
                     </li>
                     <li class="list-group-item" [class.selected]="entry === entryToEdit" *ngFor="let entry of entries" (click)="onSelect(entry)">
                         <div class="media-body">
